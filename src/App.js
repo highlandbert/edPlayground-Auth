@@ -1,18 +1,27 @@
-import './App.css'
-
 import React, {Component} from 'react'
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+  Switch
+} from 'react-router-dom'
+
+import SignIn from './sign-in/SignIn'
+import SignUp from './sign-up/SignUp'
 
 class App extends Component {
   render() {
-    return <div className="App">
-      <div className="App-heading App-flex">
-        <h2>Welcome to <span className="App-react">React</span></h2>
-      </div>
-      <div className="App-instructions App-flex">
-        <img className="App-logo" src={require('./react.svg')}/>
-        <p>Edit <code>src/App.js</code> and save to hot reload your changes.</p>
-      </div>
-    </div>
+    return (
+      <Router>
+          <Switch>
+            <Route path="/signin" component={SignIn}/>
+            <Route path="/signup" component={SignUp}/>
+            <Redirect to="/signin" />
+          </Switch>
+      </Router>
+    );
   }
 }
 

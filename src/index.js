@@ -1,3 +1,4 @@
+import '../node_modules/bulma/css/bulma.css'
 import './index.css'
 
 import React from 'react'
