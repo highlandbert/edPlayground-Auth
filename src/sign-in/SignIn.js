@@ -49,8 +49,7 @@ export default class SignIn extends Component {
         if (result.error) {
           throw result.error;
         }
-        AuthService.saveCredentials(result.token);
-        AuthService.saveUsername(this.username.getValue());
+        AuthService.saveCredentials(result.token, result.username, result._id);
         this.setState({ authenticated: true, loading: false })
       })
       .catch(error => {

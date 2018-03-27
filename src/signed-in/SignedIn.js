@@ -6,6 +6,7 @@ export default class SignedIn extends Component {
 
   constructor(props) {
     super(props);
+
     this.state = {
       authenticated: AuthService.hasCredentials(),
       username: AuthService.getUsername()
