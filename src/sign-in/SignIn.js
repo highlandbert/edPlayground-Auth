@@ -5,7 +5,7 @@ import SignInput from '../sign-input/SignInput'
 import Loading from '../loading/Loading'
 import AuthService from '../auth.service'
 
-export default class SignIn extends Component { 
+export default class SignIn extends Component {
 
   constructor(props) {
     super(props);
@@ -19,7 +19,7 @@ export default class SignIn extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.inputChanged = this.inputChanged.bind(this);
   }
-  
+
   inputChanged() {
     this.setState({ failed: false });
   }
@@ -81,7 +81,7 @@ export default class SignIn extends Component {
     return (
       <div className="section">
         <div className="container">
-          <div className="column is-6 is-offset-3">
+          <div className="column is-4 is-offset-4">
             <h2>edPlayground</h2>
             {justSignedUp}
             <form className="form-box" onSubmit={this.handleSubmit}>
