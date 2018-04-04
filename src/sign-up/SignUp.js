@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Link, Redirect} from 'react-router-dom'
-import AuthService from '../auth.service';
+import AuthService from '../auth.service'
+import ApiService from '../api.service'
 import SignInput from '../sign-input/SignInput'
 import Loading from '../loading/Loading'
 
@@ -19,6 +20,8 @@ export default class SignUp extends Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
+
     var params = new URLSearchParams();
     params.set('username', this.username.getValue());
     params.set('password', this.password.getValue());
@@ -29,19 +32,7 @@ export default class SignUp extends Component {
 
     this.setState({ loading: true });
 
-    fetch('http://localhost:8080/api/users', {
-        method: 'post',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: params
-      })
-      .then(res => {
-        if (res.status === 400) {
-          return res.json().then(error => ({ error: error }));
-        }
-        return res.json()
-      })
+    ApiService.post('users', params)
       .then(result => {
         if (result.error) {
           throw result.error;
@@ -58,8 +49,6 @@ export default class SignUp extends Component {
         })
         console.log(error);
       });
-
-    event.preventDefault();
   }
 
   onPasswordChange(e) {

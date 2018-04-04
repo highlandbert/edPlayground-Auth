@@ -3,6 +3,6 @@ import './loading.css'
 
 export default class SignedIn extends Component {
   render() {  
-    return this.props.active ? <div class="loading"><div></div></div> : '';
+    return this.props.active ? <div className="loading"><div></div></div> : '';
   }
 }

@@ -10,18 +10,18 @@ import {
 
 import SignIn from './sign-in/SignIn'
 import SignUp from './sign-up/SignUp'
-import SignedIn from './signed-in/SignedIn'
+import Profile from './profile/Profile'
 
 class App extends Component {
   render() {
     return (
       <Router>
-          <Switch>
-            <Route path="/signin" component={SignIn}/>
-            <Route path="/signup" component={SignUp}/>
-            <Route path="/signedin" component={SignedIn}/>
-            <Redirect to="/signin" />
-          </Switch>
+        <Switch>
+          <Route path="/signin" component={SignIn}/>
+          <Route path="/signup" component={SignUp}/>
+          <Route path="/profile" component={Profile}/>
+          <Redirect to="/signin" />
+        </Switch>
       </Router>
     );
   }
