@@ -61,9 +61,9 @@ export default class Profile extends Component {
           <div className="column is-6 is-offset-3">
             <h2>edPlayground</h2>
             <div className="links">
-              <a className="ed-link" href="#">Home</a>
-              <a className="ed-link" href="#">Discover</a>
-              <a className="ed-link" href="#">Learn</a>
+              <a className="ed-link" href="/">Home</a>
+              <a className="ed-link" href="/discover">Discover</a>
+              <a className="ed-link" href="/learn">Learn</a>
             </div>
             <form className="form-box boxi" onSubmit={this.signOut}>
               <Loading active={this.state.loading}/>
