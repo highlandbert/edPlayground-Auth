@@ -82,17 +82,17 @@ export default class SignIn extends Component {
           <div className="column is-4 is-offset-4">
             <h2>edPlayground</h2>
             {justSignedUp}
-            <form className="form-box" onSubmit={this.handleSubmit}>
+            <form className="form-box boxi" onSubmit={this.handleSubmit}>
               <Loading active={this.state.loading}/>
               <SignInput type="user" placeholder="Username" required="true" onChange={this.inputChanged}
                 ref={(input) => { this.username = input; }} />
               <SignInput type="password" placeholder="Password" required="true" onChange={this.inputChanged}
                 ref={(input) => { this.password = input; }} />
               {error}
-              <button className="button is-block is-info is-fullwidth">Sign In</button>
+              <button className="ed-link">Sign In</button>
             </form>
             <div className="links">
-              <Link to="/signup">I don't have an account</Link>
+              <Link className="ed-link" to="/signup">I don't have an account</Link>
             </div>
           </div>
         </div>

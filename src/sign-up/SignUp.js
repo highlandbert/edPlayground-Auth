@@ -54,7 +54,7 @@ export default class SignUp extends Component {
   onPasswordChange(e) {
     const value = e.target.value;
     if (value.length < 8) {
-      e.target.setCustomValidity("Passwords must be at least 8 characters long"); 
+      e.target.setCustomValidity("Passwords must be at least 8 characters long");
     } else {
       e.target.setCustomValidity("");
     }
@@ -65,7 +65,7 @@ export default class SignUp extends Component {
     const other = this.password.getValue();
 
     if (value !== other) {
-      e.target.setCustomValidity("Passwords don't match"); 
+      e.target.setCustomValidity("Passwords don't match");
     }
     else {
       e.target.setCustomValidity("");
@@ -91,7 +91,7 @@ export default class SignUp extends Component {
         <div className="container">
           <div className="column is-6 is-offset-3">
             <h2>edPlayground</h2>
-            <form className="form-box" onSubmit={this.handleSubmit}>
+            <form className="form-box boxi" onSubmit={this.handleSubmit}>
               <Loading active={this.state.loading}/>
               <SignInput type="user" placeholder="Username" required="true"
                 ref={(input) => { this.username = input; }} />
@@ -110,10 +110,10 @@ export default class SignUp extends Component {
               <SignInput type="date" placeholder="Birth Date" required="true"
                 ref={(input) => { this.birth = input; }} />
               {error}
-              <button className="button is-block is-info is-fullwidth">Sign Up</button>
+              <button className="ed-link">Sign Up</button>
             </form>
             <div className="links">
-              <Link to="/signin">I already have an account</Link>
+              <Link className="ed-link" to="/signin">I already have an account</Link>
             </div>
           </div>
         </div>

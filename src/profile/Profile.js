@@ -20,7 +20,7 @@ export default class Profile extends Component {
     };
     this.signOut = this.signOut.bind(this);
 
-    this.getUser().then(user => 
+    this.getUser().then(user =>
       this.setState({
         'loading': false,
         'name': user.name,
@@ -33,7 +33,7 @@ export default class Profile extends Component {
   getUser = () => {
     const auth = AuthService.getCredentials();
     const id = auth._id;
-      
+
     return ApiService.get(`users/${id}`)
       .then(response => {
         if (response.error) {
@@ -54,15 +54,23 @@ export default class Profile extends Component {
     if (!this.state.authenticated) {
       return <Redirect to="/signin" />
     }
-    
+
     return (
       <div className="section">
         <div className="container">
           <div className="column is-6 is-offset-3">
             <h2>edPlayground</h2>
-            <form className="form-box" onSubmit={this.signOut}>
+            <div className="links">
+              <a className="ed-link" href="#">Home</a>
+              <a className="ed-link" href="#">Discover</a>
+              <a className="ed-link" href="#">Learn</a>
+            </div>
+            <form className="form-box boxi" onSubmit={this.signOut}>
               <Loading active={this.state.loading}/>
-              <h3>{this.state.username}</h3>
+              <h3>
+                <i class="fas fa-user"></i>&nbsp;
+                {this.state.username}
+              </h3>
               <div className="property">
                 <p className="name">Name</p>
                 <p className="value">{this.state.name}</p>
@@ -79,13 +87,8 @@ export default class Profile extends Component {
               <p className="name">Since</p>
               <p className="value">{this.state.since}</p>
             </div>
-              <button className="button is-block is-info is-fullwidth">Sign Out</button>
+              <button className="ed-link">Sign Out</button>
             </form>
-            <div className="links">
-              <a href="#">Home</a>
-              <a href="#">Discover</a>
-              <a href="#">Learn</a>
-            </div>
           </div>
         </div>
       </div>
