@@ -1,6 +1,6 @@
 module.exports = {
   type: 'react-app',
   webpack: {
-    publicPath: '' //'/auth'
+    // publicPath: '' //'/auth'
   }
 }

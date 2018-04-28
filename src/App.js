@@ -15,7 +15,7 @@ import Profile from './profile/Profile'
 class App extends Component {
   render() {
     return (
-      <Router basename="/learn">
+      <Router basename="/auth">
         <Switch>
           <Route path="/signin" component={SignIn}/>
           <Route path="/signup" component={SignUp}/>

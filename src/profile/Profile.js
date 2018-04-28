@@ -68,7 +68,7 @@ export default class Profile extends Component {
             <form className="form-box boxi" onSubmit={this.signOut}>
               <Loading active={this.state.loading}/>
               <h3>
-                <i class="fas fa-user"></i>&nbsp;
+                <i className="fas fa-user"></i>&nbsp;
                 {this.state.username}
               </h3>
               <div className="property">
