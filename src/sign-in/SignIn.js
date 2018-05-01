@@ -80,7 +80,6 @@ export default class SignIn extends Component {
       <div className="section">
         <div className="container">
           <div className="column is-4 is-offset-4">
-            <h2>edPlayground</h2>
             {justSignedUp}
             <form className="form-box boxi" onSubmit={this.handleSubmit}>
               <Loading active={this.state.loading}/>

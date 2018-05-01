@@ -59,9 +59,7 @@ export default class Profile extends Component {
       <div className="section">
         <div className="container">
           <div className="column is-6 is-offset-3">
-            <h2>edPlayground</h2>
-            <div className="links">
-              <a className="ed-link" href="/">Home</a>
+            <div className="links profile">
               <a className="ed-link" href="/discover">Discover</a>
               <a className="ed-link" href="/learn">Learn</a>
             </div>

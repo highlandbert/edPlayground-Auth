@@ -90,7 +90,6 @@ export default class SignUp extends Component {
       <div className="section">
         <div className="container">
           <div className="column is-6 is-offset-3">
-            <h2>edPlayground</h2>
             <form className="form-box boxi" onSubmit={this.handleSubmit}>
               <Loading active={this.state.loading}/>
               <SignInput type="user" placeholder="Username" required="true"
